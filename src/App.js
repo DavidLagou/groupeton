@@ -97,7 +97,7 @@ class App extends Component {
       });
   };
 
-  // adding a object into the at the path that matches the user ID database and storing the values from our object inside of it
+  // Adding a object into the at the path that matches the user ID database and storing the values from our object inside of it
   addGroupeton = tempGroupeton => {
     const ref = firebase
       .database()
@@ -125,9 +125,7 @@ class App extends Component {
             path="/attendees/:userID/:rideID"
             adminUser={this.state.userID}
             rides={this.state.rides}
-
           />
-
           <Rides
             path="/rides"
             rides={this.state.rides}
@@ -140,7 +138,6 @@ class App extends Component {
             addGroupeton={this.addGroupeton}
             userID={this.state.userID}
           />
-
           <Register path="/register" registerUser={this.registerUser} />
         </Router>
 

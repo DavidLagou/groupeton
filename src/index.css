@@ -1,6 +1,5 @@
 body {
     font-weight: 200;
-    overflow-x: hidden;
 }
 
 input, nav-item {
@@ -8,10 +7,24 @@ input, nav-item {
     line-height: 110%;
 }
 .homebg{
- position: absolute;
- top: 10px;
- z-index: -1000;
- left: 0px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.homebgtwo{
+    background: url('/homebg.jpg');
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .logoTxt{
