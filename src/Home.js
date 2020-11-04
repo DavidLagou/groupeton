@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router'
+import bgimg from './homebg.jpg'
 
 
 class Home extends Component {
   render() {
     const { user } = this.props;
     return (
-      <div className="text-center homebgtwo">
-       
-
+      <div className="text-center mainHomeContainer">
         <div className="row justify-content-center homeContainer">
           <div className="col-10 col-md-10 col-lg-8 col-xl-7 contentContainer">
             <div className="display-4 mt-3 mb-2 titleTxt">
@@ -21,13 +20,13 @@ class Home extends Component {
             {/* Conditional statement that shows things that depends if there is a value for user */}
             {user == null && (
               <span>
-                <Link to="/register" className="btn btn-outline-primary mr-2 homeBtn"> Register </Link>
-                <Link to="/login" className="btn btn-outline-primary mr-2 homeBtn ">Log In</Link>
+                <Link to="/groupeton/register" className="btn btn-outline-primary mr-2 homeBtn"> Register </Link>
+                <Link to="/groupeton/login" className="btn btn-outline-primary mr-2 homeBtn ">Log In</Link>
               </span>
             )}
 
             {user && (
-              <Link to="groupeton/rides" className="btn btn-primary homeBtn"> My Rides   </Link>
+              <Link to="/rides" className="btn btn-primary homeBtn"> My Rides   </Link>
             )}
           </div>
         </div>

@@ -1,6 +1,6 @@
 // Import React
 import React, { Component } from 'react';
-import { Router, navigate } from '@reach/router';
+import { navigate, Router } from '@reach/router';
 import firebase from './Firebase';
 
 import Home from './Home';
@@ -22,6 +22,7 @@ class App extends Component {
     };
   }
 
+
   componentDidMount() {
 
     firebase.auth().onAuthStateChanged(FBUser => {
@@ -42,9 +43,9 @@ class App extends Component {
             ridesList.push({
               rideID: item,
               rideName: rides[item].groupetonName,
-              rideDate:rides[item].groupetonDate,
-              rideTime : rides[item].groupetonTime,
-              rideDesc : rides[item].groupetonDesc,
+              rideDate: rides[item].groupetonDate,
+              rideTime: rides[item].groupetonTime,
+              rideDesc: rides[item].groupetonDesc,
 
             });
           }
@@ -56,7 +57,7 @@ class App extends Component {
 
 
       } else {
-        this.setState({ user: null , displayName:null});
+        this.setState({ user: null, displayName: null });
       }
 
     });
@@ -116,10 +117,11 @@ class App extends Component {
     return (
       <div>
         <Navigation user={this.state.user} logOutUser={this.logOutUser} />
-    
+
         <Router>
-          <Home path="/" user={this.state.user} />
-          <Login path="/login" />
+          
+          <Home path="/groupeton" user={this.state.user} />
+          <Login path="/groupeton/login" />
 
           <Attendees
             path="/attendees/:userID/:rideID"
@@ -138,7 +140,7 @@ class App extends Component {
             addGroupeton={this.addGroupeton}
             userID={this.state.userID}
           />
-          <Register path="/register" registerUser={this.registerUser} />
+          <Register path="/groupeton/register" registerUser={this.registerUser} />
         </Router>
 
       </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from './Firebase';
 import FormError from './FormError';
-import { Router,navigate } from '@reach/router';
+import { navigate } from '@reach/router';
 
 
 class Login extends Component {
@@ -40,7 +40,7 @@ class Login extends Component {
         registrationInfo.password
       )
       .then(() => {
-        navigate('groupeton/rides');
+        navigate('/rides');
       })
       .catch(error => {
         if (error.message !== null) {

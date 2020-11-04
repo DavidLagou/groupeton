@@ -8,7 +8,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <App path="/groupeton"/>,
+  <App/>,
 
   document.getElementById('root')
 );
