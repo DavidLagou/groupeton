@@ -1,13 +1,201 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-weight: 200;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input, nav-item {
+    font-weight: 200;
+    line-height: 110%;
+}
+
+
+.homebgtwo {
+    background: url('/img/homebg.jpg');
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.logoTxt{
+    font-weight: 600;
+}
+
+/*  Navbar Color */
+
+.site-nav.navColor {
+    background-color: #C75151;
+}
+
+.homeContainer {
+    padding-top: 100px;
+    z-index: 1;
+}
+.contentContainer{
+    background-color: rgba(0, 0, 0, 0.486);
+    padding: 20px;
+
+}
+
+/* Welcome Text */
+
+.titleTxt {
+    color: white;
+    font-weight: 600;
+}
+/* Home paragraph text */
+.lead {
+    color: white;
+}
+/* Home buttons Css */
+.homeBtn {
+    background-color: #C75151;
+    color: white;
+    border: none;
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.btn-outline-primary:hover,.btn-primary:hover{
+    background-color: black;
+}
+
+
+/* Login/ Register Style */
+.mt-3, .my-3{
+    margin-top: 0px !important;
+}
+.formContainer{
+    background-color: #C75151;
+    height: 100vh;
+    width: 100%;
+    padding-top: 50px;
+}
+.form{
+    box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
+}
+.formBtn{
+    background-color: #C75151;
+    border: none;
+
+}
+
+
+/* Ride page */
+.formToggle{
+    background-color: #C75151;
+    padding: 14px;
+    cursor: pointer;
+    color: white;
+    margin: 33px 0;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+.formToggle:hover{
+    background-color: black;
+    padding: 20px;
+}
+
+
+.formDisplay{
+    display: none;
+}
+
+
+/* RideList */
+
+.singleRide{
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.rideDesc{
+    /* width: 400px; */
+    overflow: hidden; /* make sure it hides the content that overflows */
+    white-space: nowrap; /* don't break the line */
+    text-overflow: ellipsis; /* give the beautiful '...' effect */
+}
+
+/* Attendees */
+.clipBoardDisplay{
+    display: none;
+}
+.checkBtn{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    transition: 0.3s;
+    border: none;
+}
+.checkBtn:hover{
+    cursor: pointer;
+    background-color: white;
+    color:#c75151
+}
+
+.rideJumbo{
+    background-color: #c75151;
+background-image:  radial-gradient(#ffffff 1px, transparent 1px), radial-gradient(#ffffff 1px, #c75151 1px);
+background-size: 40px 40px;
+background-position: 0 0,20px 20px;
+}
+.attendeeTitle{
+    font-weight: 900;
+    color: white;
+    background-color: #c75151;
+    width: fit-content;
+    padding-bottom: 20px;
+}
+.attendeeDesc{
+    background-color: #c75151;
+    width: fit-content;
+}
+
+.timeContainer{
+    padding-top: 20px;
+    color:rgb(255, 255, 255);
+    font-size: 2.0em;
+    font-weight: 700;
+    display: flex;
+}
+
+.searchBar{
+ background-color:#c75151 ;
+
+}
+.searchContainer{
+   padding: 20px 0;
+   margin-top: 80px;
+   padding-bottom: 60px;
+}
+.resetQuery{background-color: black; color: white;}
+
+.rideTime{
+    border-left: 3px solid rgba(219, 219, 219, 0.945);
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+
+.ridersCard{
+    background-color:#ffffff;
+    margin: 5px 0;
+    color: rgb(0, 0, 0);
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.ridersContainer{margin-bottom: 100px;}
+
+.testbro{
+    border: 1px solid black;
+}
+.deleteBtn,.emailBtn{
+    background-color: #525252;
+    color: white;
+    padding: 5px 15px;
+    font-size: 1.1em;
+}
+.deleteBtn:hover,.emailBtn:hover{
+    background-color: #c75151;
 }
