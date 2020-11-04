@@ -17,11 +17,13 @@ class Register extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // takes in input values and stores them into the state that matches their name
   handleChange(e) {
     const itemName = e.target.name;
     const itemValue = e.target.value;
 
     this.setState({ [itemName]: itemValue }, () => {
+      // check to see if both passwords match if not, display error message 
       if (this.state.passOne !== this.state.passTwo) {
         this.setState({ errorMessage: 'Passwords no not match' });
       } else {
@@ -30,6 +32,8 @@ class Register extends Component {
     });
   }
 
+// Takes register states and puts them in an object.
+// This object is then pushed into the database
   handleSubmit(e) {
     var registrationInfo = {
       displayName: this.state.displayName,

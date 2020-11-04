@@ -23,13 +23,15 @@ class Login extends Component {
     this.setState({ [itemName]: itemValue });
   }
 
+  // Creates a new user into the database and passes the state properties as values.
+  // If successful, sends the user to the rides page where they will continue on, if not displayss a  error messsage that pertains to what is wrong.
   handleSubmit(e) {
     var registrationInfo = {
       email: this.state.email,
       password: this.state.password
     };
     e.preventDefault();
-
+  
     firebase
       .auth()
       .signInWithEmailAndPassword(

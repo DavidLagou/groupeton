@@ -21,7 +21,7 @@ class Attendees extends Component {
     }
 
     componentDidMount() {
-        // Grabs a list of all attendies and displays them 
+        // Grabs information regarding attendees and pushes them all into an array.
         const ref = firebase
             .database()
             .ref(`rides/${this.props.userID}/${this.props.rideID}/attendees`);
@@ -40,7 +40,7 @@ class Attendees extends Component {
             });
         });
 
-
+        // grabs information regarding the groupeton entry. We need this so we can display specific properties of each ride EG: NAME, DATE, TIME 
         const groupetonInfo = firebase
             .database()
             .ref(`rides/${this.props.userID}/${this.props.rideID}`);
@@ -59,18 +59,19 @@ class Attendees extends Component {
             [itemName]: itemValue
         });
     }
+    // When pressed, resets the search query
     resetQuery() {
         this.setState({
             searchQuery: ''
         });
     }
-  
+
 
     render() {
-    
+        // Converts string into a lowercase so that we can check to see if any item in our object matches anything in our state key
         const dataFilter = item => item.attendeeName.toLowerCase().match(this.state.searchQuery.toLocaleLowerCase()) && true;
         const filteredAttendees = this.state.displayAttendees.filter(dataFilter);
-        
+
 
         return (
             <div>
@@ -85,10 +86,10 @@ class Attendees extends Component {
 
                     </div>
                     <div>
-                            <button  className='checkBtn' onClick={e => navigate(`/checkin/${this.props.userID}/${this.props.rideID}`)}>
-                               <FaPlusCircle/> Check in
+                        <button className='checkBtn' onClick={e => navigate(`/checkin/${this.props.userID}/${this.props.rideID}`)}>
+                            <FaPlusCircle /> Check in
                              </button>
-                        </div>
+                    </div>
 
 
                 </div>
@@ -130,7 +131,6 @@ class Attendees extends Component {
                         userID={this.props.userID}
                         attendees={filteredAttendees}
                         rideID={this.props.rideID}
-
                     />
                 </div>
 

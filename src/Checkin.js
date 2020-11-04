@@ -6,8 +6,8 @@ class Checkin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        displayName:'',
-        email:''
+      displayName: '',
+      email: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,23 +21,24 @@ class Checkin extends Component {
     this.setState({ [itemName]: itemValue });
   }
 
+  // Adding the user input and putting them into the specific attendees list 
+  // then navigating the user back to the ride details page 
   handleSubmit(e) {
-  
     e.preventDefault();
     const ref = firebase
-    .database()
-    .ref(`rides/${this.props.userID}/${this.props.rideID}/attendees`)
+      .database()
+      .ref(`rides/${this.props.userID}/${this.props.rideID}/attendees`)
     ref.push({
-        attendeeName: this.state.displayName,
-        attendeeEmail:this.state.email
+      attendeeName: this.state.displayName,
+      attendeeEmail: this.state.email
     });
     navigate(`/attendees/${this.props.userID}/${this.props.rideID}`)
-   
+
   }
 
   render() {
     return (
-        <form className="mt-3 formContainer" onSubmit={this.handleSubmit}>
+      <form className="mt-3 formContainer" onSubmit={this.handleSubmit}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-6">
@@ -91,8 +92,8 @@ class Checkin extends Component {
           </div>
         </div>
       </form>
-    
-      )
+
+    )
   }
 }
 

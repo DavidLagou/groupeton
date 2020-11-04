@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import RideList from './RideList';
-
 import { FaPlusCircle } from 'react-icons/fa'
 
 class Rides extends Component {
@@ -35,7 +34,7 @@ class Rides extends Component {
             groupetonDesc: this.state.groupetonDesc
         }
         // Sets a prop to a function that has our new object as a argument.
-        this.props.addGroupeton(tempGroupeton); 
+        this.props.addGroupeton(tempGroupeton);
         this.setState({
             groupetonName: '',
             groupetonDate: '',
@@ -44,6 +43,7 @@ class Rides extends Component {
         })
 
     }
+    // When user clicks on form, toggle to display the form fields , this is done by setting the classname to a class that has display none.
     toggleForm() {
         this.setState({
             formDisplay: !this.state.formDisplay
@@ -152,7 +152,7 @@ class Rides extends Component {
                         </div>
                     </div>
 
-                {/* Displays user rides if there are any if not states that there are no rides avaialble  */}
+                    {/* Displays user rides if there are any if not states that there are no rides avaialble  */}
                     {this.props.rides && this.props.rides.length ? (
                         <div className="card-body py-2">
                             <h4 className="card-title font-weight-light m-0">  Your Groupetons</h4>

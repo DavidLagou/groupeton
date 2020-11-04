@@ -15,6 +15,7 @@ class Navigation extends Component {
                      </Link>
                      
                     <div className="navbar-nav ml-auto">
+                        {/* statments that display depending on if the user is logged in or not. EG : if the user is logged in, show RIDES and LOGOUT only  */}
                         {user && (<Link className="nav-item nav-link" to="/rides">
                             Rides
                        </Link>)

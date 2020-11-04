@@ -1,31 +1,26 @@
 body {
     font-weight: 200;
+    overflow-x: hidden;
 }
 
 input, nav-item {
     font-weight: 200;
     line-height: 110%;
 }
-
-
-.homebgtwo {
-    background: url('/img/homebg.jpg');
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
+.homebg{
+ position: absolute;
+ top: 10px;
+ z-index: -1000;
+ left: 0px;
 }
+
 .logoTxt{
     font-weight: 600;
 }
-
 /*  Navbar Color */
-
 .site-nav.navColor {
     background-color: #C75151;
 }
-
 .homeContainer {
     padding-top: 100px;
     z-index: 1;
@@ -33,7 +28,6 @@ input, nav-item {
 .contentContainer{
     background-color: rgba(0, 0, 0, 0.486);
     padding: 20px;
-
 }
 
 /* Welcome Text */
@@ -60,7 +54,6 @@ input, nav-item {
     background-color: black;
 }
 
-
 /* Login/ Register Style */
 .mt-3, .my-3{
     margin-top: 0px !important;
@@ -77,9 +70,7 @@ input, nav-item {
 .formBtn{
     background-color: #C75151;
     border: none;
-
 }
-
 
 /* Ride page */
 .formToggle{
@@ -96,11 +87,9 @@ input, nav-item {
     padding: 20px;
 }
 
-
 .formDisplay{
     display: none;
 }
-
 
 /* RideList */
 
