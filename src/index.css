@@ -13,7 +13,7 @@ input, nav-item {
     width: 100%;
 }
 .homebgtwo{
-    background: url('/homebg.jpg');
+    /* background: url('/homebg.jpg'); */
     height: 100vh;
     background-position: center;
     background-size: cover;

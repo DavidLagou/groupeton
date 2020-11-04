@@ -27,7 +27,7 @@ class Home extends Component {
             )}
 
             {user && (
-              <Link to="/rides" className="btn btn-primary homeBtn"> My Rides   </Link>
+              <Link to="groupeton/rides" className="btn btn-primary homeBtn"> My Rides   </Link>
             )}
           </div>
         </div>

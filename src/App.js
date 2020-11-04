@@ -116,7 +116,7 @@ class App extends Component {
     return (
       <div>
         <Navigation user={this.state.user} logOutUser={this.logOutUser} />
-      
+    
         <Router>
           <Home path="/" user={this.state.user} />
           <Login path="/login" />
