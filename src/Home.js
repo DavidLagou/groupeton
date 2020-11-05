@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router'
-import bgimg from './homebg.jpg'
 
 
 class Home extends Component {
