@@ -40,7 +40,7 @@ class Login extends Component {
         registrationInfo.password
       )
       .then(() => {
-        navigate('/rides');
+        navigate('/groupeton/rides');
       })
       .catch(error => {
         if (error.message !== null) {

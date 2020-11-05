@@ -46,6 +46,8 @@ class App extends Component {
               rideDate: rides[item].groupetonDate,
               rideTime: rides[item].groupetonTime,
               rideDesc: rides[item].groupetonDesc,
+              rideLocation: rides[item].groupetonLocation,
+
 
             });
           }
@@ -75,7 +77,7 @@ class App extends Component {
           displayName: FBUser.displayName,
           userID: FBUser.uid
         });
-        navigate('/rides');
+        navigate('/groupeton/rides');
       });
     });
   };
@@ -94,7 +96,7 @@ class App extends Component {
       .auth()
       .signOut()
       .then(() => {
-        navigate('/login');
+        navigate('/groupeton/login');
       });
   };
 
@@ -109,6 +111,8 @@ class App extends Component {
         groupetonDate: tempGroupeton.groupetonDate,
         groupetonTime: tempGroupeton.groupetonTime,
         groupetonDesc: tempGroupeton.groupetonDesc,
+        groupetonLocation: tempGroupeton.groupetonLocation,
+
       }
     )
   }
@@ -129,7 +133,7 @@ class App extends Component {
             rides={this.state.rides}
           />
           <Rides
-            path="/rides"
+            path="/groupeton/rides"
             rides={this.state.rides}
             addGroupeton={this.addGroupeton}
             userID={this.state.userID}

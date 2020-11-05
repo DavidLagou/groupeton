@@ -10,6 +10,7 @@ class Rides extends Component {
             groupetonDate: '',
             groupetonTime: '',
             groupetonDesc: '',
+            groupetonLocation:'',
             formDisplay: false,
         };
 
@@ -31,7 +32,10 @@ class Rides extends Component {
             groupetonName: this.state.groupetonName,
             groupetonDate: this.state.groupetonDate,
             groupetonTime: this.state.groupetonTime,
-            groupetonDesc: this.state.groupetonDesc
+            groupetonDesc: this.state.groupetonDesc,
+            groupetonLocation: this.state.groupetonLocation
+
+            
         }
         // Sets a prop to a function that has our new object as a argument.
         this.props.addGroupeton(tempGroupeton);
@@ -40,6 +44,7 @@ class Rides extends Component {
             groupetonDate: '',
             groupetonTime: '',
             groupetonDesc: '',
+            groupetonLocation:''
         })
 
     }
@@ -121,7 +126,27 @@ class Rides extends Component {
                                         </div>
                                     </div>
 
+                                    <div className="form-group form-row ">
+                                        <label
+                                            className="col-md-2 col-form-label text-md-right"
+                                            htmlFor="groupetonName"
+                                            readOnly >
 
+                                            Start Location
+                                        </label>
+                                        <div className="col-md-10">
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                name="groupetonLocation"
+                                                aria-describedby="buttonAdd"
+                                                placeholder="123 abc Street"
+                                                value={this.state.groupetonLocation}
+                                                onChange={this.handleChange}
+                                                required
+                                            />
+                                        </div>
+                                    </div>
                                     <div className="form-group form-row">
                                         <label className="col-md-2 text-md-right" htmlFor="aptNotes">
                                             Description
