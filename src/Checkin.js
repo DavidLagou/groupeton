@@ -44,7 +44,7 @@ class Checkin extends Component {
             <div className="col-lg-6">
               <div className="card bg-light">
                 <div className="card-body">
-                  <h3 className="font-weight-light mb-3">Check in</h3>
+                  <h3 className="font-weight-light mb-3">Join Ride</h3>
                   <section className="form-group">
                     <label
                       className="form-control-label sr-only"
@@ -83,7 +83,7 @@ class Checkin extends Component {
                   </section>
                   <div className="form-group text-right mb-0">
                     <button className="btn btn-primary formBtn" type="submit">
-                      Check in
+                      Join Ride
                     </button>
                   </div>
                 </div>

@@ -3,6 +3,7 @@ import firebase from './Firebase';
 import FormError from './FormError';
 import { navigate } from '@reach/router';
 
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +40,7 @@ class Login extends Component {
         registrationInfo.password
       )
       .then(() => {
-        navigate('/rides');
+        navigate('/groupeton/rides');
       })
       .catch(error => {
         if (error.message !== null) {

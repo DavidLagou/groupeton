@@ -3,7 +3,7 @@ import firebase from './Firebase';
 import AttendeesList from './AttendeesList'
 import { navigate } from '@reach/router';
 
-import { FaUndo, FaCalendarCheck, FaClock, FaBicycle, FaPlusCircle } from 'react-icons/fa'
+import { FaUndo, FaCalendarCheck, FaClock, FaBicycle, FaPlusCircle ,FaMap} from 'react-icons/fa'
 
 
 class Attendees extends Component {
@@ -82,12 +82,14 @@ class Attendees extends Component {
                     <div className="timeContainer" >
 
                         <p className="rideCalender"> <FaCalendarCheck /> {this.state.displayGroupetonInfo.groupetonDate}</p>
+                        <p className="rideTime"> <FaMap /> {this.state.displayGroupetonInfo.groupetonLocation}</p>
                         <p className="rideTime"> <FaClock /> {this.state.displayGroupetonInfo.groupetonTime}</p>
+
 
                     </div>
                     <div>
                         <button className='checkBtn' onClick={e => navigate(`/checkin/${this.props.userID}/${this.props.rideID}`)}>
-                            <FaPlusCircle /> Check in
+                            <FaPlusCircle /> Add Riders
                              </button>
                     </div>
 
@@ -97,7 +99,7 @@ class Attendees extends Component {
                     <div className="row justify-content-center searchContainer">
                         <div className="col-md-8 ">
                             <h1 className="text-center" >
-                                Attendees
+                                Current Riders
                             </h1>
                             <div className="card  mb-2 mt-6 searchBar">
                                 <div className="card-body text-center">

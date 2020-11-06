@@ -1,6 +1,6 @@
 // Import React
 import React, { Component } from 'react';
-import { Router, navigate } from '@reach/router';
+import { navigate, Router } from '@reach/router';
 import firebase from './Firebase';
 
 import Home from './Home';
@@ -22,6 +22,7 @@ class App extends Component {
     };
   }
 
+
   componentDidMount() {
 
     firebase.auth().onAuthStateChanged(FBUser => {
@@ -42,9 +43,11 @@ class App extends Component {
             ridesList.push({
               rideID: item,
               rideName: rides[item].groupetonName,
-              rideDate:rides[item].groupetonDate,
-              rideTime : rides[item].groupetonTime,
-              rideDesc : rides[item].groupetonDesc,
+              rideDate: rides[item].groupetonDate,
+              rideTime: rides[item].groupetonTime,
+              rideDesc: rides[item].groupetonDesc,
+              rideLocation: rides[item].groupetonLocation,
+
 
             });
           }
@@ -56,7 +59,7 @@ class App extends Component {
 
 
       } else {
-        this.setState({ user: null , displayName:null});
+        this.setState({ user: null, displayName: null });
       }
 
     });
@@ -74,7 +77,7 @@ class App extends Component {
           displayName: FBUser.displayName,
           userID: FBUser.uid
         });
-        navigate('/rides');
+        navigate('/groupeton/rides');
       });
     });
   };
@@ -93,7 +96,7 @@ class App extends Component {
       .auth()
       .signOut()
       .then(() => {
-        navigate('/login');
+        navigate('/groupeton/login');
       });
   };
 
@@ -108,6 +111,8 @@ class App extends Component {
         groupetonDate: tempGroupeton.groupetonDate,
         groupetonTime: tempGroupeton.groupetonTime,
         groupetonDesc: tempGroupeton.groupetonDesc,
+        groupetonLocation: tempGroupeton.groupetonLocation,
+
       }
     )
   }
@@ -116,10 +121,11 @@ class App extends Component {
     return (
       <div>
         <Navigation user={this.state.user} logOutUser={this.logOutUser} />
-      
+
         <Router>
-          <Home path="/" user={this.state.user} />
-          <Login path="/login" />
+          
+          <Home path="/groupeton" user={this.state.user} />
+          <Login path="/groupeton/login" />
 
           <Attendees
             path="/attendees/:userID/:rideID"
@@ -127,7 +133,7 @@ class App extends Component {
             rides={this.state.rides}
           />
           <Rides
-            path="/rides"
+            path="/groupeton/rides"
             rides={this.state.rides}
             addGroupeton={this.addGroupeton}
             userID={this.state.userID}
@@ -138,7 +144,7 @@ class App extends Component {
             addGroupeton={this.addGroupeton}
             userID={this.state.userID}
           />
-          <Register path="/register" registerUser={this.registerUser} />
+          <Register path="/groupeton/register" registerUser={this.registerUser} />
         </Router>
 
       </div>
